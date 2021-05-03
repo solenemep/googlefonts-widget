@@ -5,7 +5,7 @@ const Settings = (props) => {
   return (
     <div className="col-lg-3 mb-4">
 
-      <form style={{ position: "sticky", top: "0px" }}>
+      <form style={{ position: "sticky", top: "0px" }} className="py-3">
         <div className="mb-3">
           {lang === 'EN' &&
             <label className="fw-bold mb-3" htmlFor="sort">Display fonts</label>}
@@ -18,7 +18,7 @@ const Settings = (props) => {
                 <option value="date">Most recent</option>
                 <option value="popularity">Most popular</option>
                 <option value="trending">Top 10 trending</option>
-                <option value="style">More styles</option>
+                <option value="style">Most styled</option>
               </React.Fragment>}
             {lang === 'FR' &&
               <React.Fragment>
@@ -49,11 +49,11 @@ const Settings = (props) => {
             <label htmlFor="number" className="form-label fw-bold mb-3">Number of fonts</label>}
           {lang === 'FR' &&
             <label htmlFor="number" className="form-label fw-bold mb-3">Nombre de polices</label>}
-          <input type="number" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} id="number" name="number" min="10" max="100" value={number} onChange={changeNumber} />
+          <input type="number" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} id="number" name="number" min="10" value={number} onChange={changeNumber} />
         </div>
-        <div className="mb-3">
+        <div>
           {lang === 'EN' &&
-            <label htmlFor="color" className="form-label fw-bold mb-3">Fonts's color</label>}
+            <label htmlFor="color" className="form-label fw-bold mb-3">Font's color</label>}
           {lang === 'FR' &&
             <label htmlFor="color" className="form-label fw-bold mb-3">Couleur de la police</label>}
           <input type="color" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} id="color" name="color" value={color} onChange={changeColor} />

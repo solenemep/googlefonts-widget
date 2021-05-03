@@ -36,7 +36,7 @@ const FontsApp = (props) => {
   )
 
   // Number
-  const [number, setNumber] = useState(JSON.parse(localStorage.getItem('numberGoogleFonts')) || '28')
+  const [number, setNumber] = useState(JSON.parse(localStorage.getItem('numberGoogleFonts')) || '20')
   const changeNumber = (event) => {
     setNumber(event.target.value)
   }
