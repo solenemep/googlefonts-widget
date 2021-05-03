@@ -36,7 +36,7 @@ const FontsApp = (props) => {
   )
 
   return (
-    <div className="row m-0">
+    <div className="row">
       <Settings lang={lang} darkMode={darkMode} choice={choice} changeChoice={changeChoice} text={text} changeText={changeText} size={size} changeSize={changeSize} />
       <Display lang={lang} darkMode={darkMode} choice={choice} text={text} size={size} />
     </div>

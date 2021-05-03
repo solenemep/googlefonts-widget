@@ -33,7 +33,7 @@ const Preference = (props) => {
       >
         {darkMode ? <Sun></Sun> : <Moon></Moon>}
       </button>
-      <div class="btn-group m-1" role="group" aria-label="Langage">
+      <div className="btn-group m-1" role="group" aria-label="Langage">
         <button type="button" value='EN' className={darkMode ? 'btn btn-light text-dark' : 'btn btn-dark text-white'} onClick={changeLang} disabled={lang === 'EN'}>EN</button>
         <button type="button" value='FR' className={darkMode ? 'btn btn-light text-dark' : 'btn btn-dark text-white'} onClick={changeLang} disabled={lang === 'FR'}>FR</button>
       </div>
