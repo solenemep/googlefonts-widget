@@ -35,10 +35,20 @@ const FontsApp = (props) => {
   }
   )
 
+  // Number
+  const [number, setNumber] = useState(JSON.parse(localStorage.getItem('numberGoogleFonts')) || '28')
+  const changeNumber = (event) => {
+    setNumber(event.target.value)
+  }
+  useEffect(() => {
+    localStorage.setItem("numberGoogleFonts", JSON.stringify(number), [number])
+  }
+  )
+
   return (
     <div className="row">
-      <Settings lang={lang} darkMode={darkMode} choice={choice} changeChoice={changeChoice} text={text} changeText={changeText} size={size} changeSize={changeSize} />
-      <Display lang={lang} darkMode={darkMode} choice={choice} text={text} size={size} />
+      <Settings lang={lang} darkMode={darkMode} choice={choice} changeChoice={changeChoice} text={text} changeText={changeText} size={size} changeSize={changeSize} number={number} changeNumber={changeNumber} />
+      <Display lang={lang} darkMode={darkMode} choice={choice} text={text} size={size} number={number} />
     </div>
   )
 }

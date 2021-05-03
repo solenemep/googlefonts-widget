@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import FontArticle from "./FontArticle"
 
 const Display = (props) => {
-  const { lang, darkMode, choice, text, size } = props
+  const { lang, darkMode, choice, text, size, number } = props
   // const CHOICE = choice.toUpperCase()
 
   // Appel à l'API `https://webfonts.googleapis.com/v1/webfonts?sort=${CHOICE}&key=${process.env.REACT_APP_GOOGLEFONTS_API_KEY}`
@@ -85,7 +85,7 @@ const Display = (props) => {
         {!!error && <p className="px-2 text-center alert alert-danger">{error}</p>}
         {!loading &&
           <React.Fragment>
-            {polices.slice(0, 10).map((police) => {
+            {polices.slice(0, number).map((police) => {
               return (
                 <article className="col-lg-6 mb-4" key={police.family}>
                   <FontArticle
