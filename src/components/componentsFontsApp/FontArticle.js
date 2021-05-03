@@ -2,7 +2,7 @@ const FontArticle = (props) => {
   const { size, text } = props
   return (
     <div className="shadow-sm border p-3 h-100">
-      <h2 className="h-6 d-flex align-items-center justify-content-between">
+      <h2 className="h6 d-flex align-items-center justify-content-between">
         <span></span>
         <small>variant(s)</small>
       </h2>

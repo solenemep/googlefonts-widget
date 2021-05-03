@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Display from "./componentsFontsApp/Display"
 import Settings from "./componentsFontsApp/Settings"
 
@@ -6,22 +6,34 @@ const FontsApp = (props) => {
   const { } = props
 
   // Choice
-  const [choice, setChoice] = useState('date')
+  const [choice, setChoice] = useState(JSON.parse(localStorage.getItem('choiceGoogleFonts')) || 'date')
   const changeChoice = (event) => {
     setChoice(event.target.value)
   }
+  useEffect(() => {
+    localStorage.setItem("choiceGoogleFonts", JSON.stringify(choice), [choice])
+  }
+  )
 
   // Text
-  const [text, setText] = useState('')
+  const [text, setText] = useState(JSON.parse(localStorage.getItem('textGoogleFonts')) || 'Portez ce vieux whisky au juge blond qui fume !?')
   const changeText = (event) => {
     setText(event.target.value)
   }
+  useEffect(() => {
+    localStorage.setItem("textGoogleFonts", JSON.stringify(text), [text])
+  }
+  )
 
   // Size
-  const [size, setSize] = useState('33')
+  const [size, setSize] = useState(JSON.parse(localStorage.getItem('textGoogleFonts')) || '28')
   const changeSize = (event) => {
     setSize(event.target.value)
   }
+  useEffect(() => {
+    localStorage.setItem("sizeGoogleFonts", JSON.stringify(size), [size])
+  }
+  )
 
   return (
     <div className="row my-5">
