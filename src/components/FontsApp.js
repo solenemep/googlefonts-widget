@@ -2,7 +2,8 @@ import { useState, useEffect } from "react"
 import Display from "./componentsFontsApp/Display"
 import Settings from "./componentsFontsApp/Settings"
 
-const FontsApp = () => {
+const FontsApp = (props) => {
+  const { lang, darkMode } = props
 
   // Choice
   const [choice, setChoice] = useState(JSON.parse(localStorage.getItem('choiceGoogleFonts')) || 'date')
