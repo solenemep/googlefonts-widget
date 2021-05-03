@@ -11,7 +11,7 @@ const Settings = (props) => {
         </select>
         <div className="mb-3">
           <label htmlFor="text" className="form-label fw-bold mb-3">Tappez votre text</label>
-          <textarea id="text" className="form-control" onChange={changeText}>{text}</textarea>
+          <textarea id="text" className="form-control" onChange={changeText} value={text}></textarea>
         </div>
         <label htmlFor="range" className="form-label fw-bold mb-3">La taille de police</label>
         <input type="range" className="form-range" id="range" min="8" max="48" step="1" value={size} onChange={changeSize} />
