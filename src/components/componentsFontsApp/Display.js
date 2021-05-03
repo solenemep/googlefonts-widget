@@ -71,7 +71,7 @@ const Display = (props) => {
 
   return (
     <div className="col-lg-9">
-      <section className="row mb-5">
+      <section className="row mb-5 mx-0">
         <h2 className="mb-3">
           {choice === 'date' && lang === 'EN' && <span className="badge bg-danger">Most recent</span>}
           {choice === 'date' && lang === 'FR' && <span className="badge bg-danger">Les plus récentes</span>}
@@ -87,7 +87,7 @@ const Display = (props) => {
           <React.Fragment>
             {polices.slice(0, 10).map((police) => {
               return (
-                <article className="col-lg-6 mb-4" key={police.family}>
+                <article className={darkMode ? "bg-dark col-lg-6 mb-4 px-0" : "bg-light col-lg-6 mb-4 px-0"} key={police.family}>
                   <FontArticle
                     lang={lang}
                     darkMode={darkMode}

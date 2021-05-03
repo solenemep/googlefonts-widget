@@ -12,7 +12,7 @@ const FontArticle = (props) => {
         {lang === 'FR' && <small>{policeVariants} variante(s)</small>}
       </h2>
       <p>
-        <span className="badge bg-dark">{policeCategory.toUpperCase()}</span>
+        <span className={darkMode ? "badge bg-light text-dark" : "badge bg-dark text-white"}>{policeCategory.toUpperCase()}</span>
       </p>
       <GoogleFontLoader
         fonts={[

@@ -9,7 +9,7 @@ const Settings = (props) => {
           <label className="fw-bold mb-2" htmlFor="sort">Display fonts</label>}
         {lang === 'FR' &&
           <label className="fw-bold mb-2" htmlFor="sort">Afficher des polices</label>}
-        <select value={choice} id="sort" className="form-select mb-4" onChange={changeChoice}>
+        <select value={choice} id="sort" className={darkMode ? "form-select bg-dark text-white mb-4" : "form-select bg-light text-dark mb-4"} onChange={changeChoice}>
           {lang === 'EN' &&
             <React.Fragment>
               <option value="date">Most recent</option>
@@ -28,7 +28,7 @@ const Settings = (props) => {
             <label htmlFor="text" className="form-label fw-bold mb-3">Type your text</label>}
           {lang === 'FR' &&
             <label htmlFor="text" className="form-label fw-bold mb-3">Tappez votre text</label>}
-          <textarea id="text" className="form-control" onChange={changeText} value={text}></textarea>
+          <textarea id="text" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} onChange={changeText} value={text}></textarea>
         </div>
         {lang === 'EN' &&
           <label htmlFor="range" className="form-label fw-bold mb-3">Font size</label>}

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import reactDom from "react-dom";
 import FontsApp from "./components/FontsApp";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -47,17 +46,23 @@ function App() {
 
         <Preference lang={lang} changeLang={changeLang} darkMode={darkMode} changeDarkMode={changeDarkMode} />
       </Header>
-      <div className="container min-vh-100">
-        <FontsApp lang={lang} darkMode={darkMode} />
+      <div className={darkMode ? "bg-black text-white" : "bg-white text-dark"}>
+        <div className="container py-5 min-vh-100">
+          <FontsApp lang={lang} darkMode={darkMode} />
+        </div>
       </div>
-      {lang === 'EN' &&
+      {
+        lang === 'EN' &&
         <Footer>
           With Love&nbsp;& React for Alyra
-      </Footer>}
-      {lang === 'FR' &&
+      </Footer>
+      }
+      {
+        lang === 'FR' &&
         <Footer>
           Avec Amour&nbsp;& React pour Alyra
-      </Footer>}
+      </Footer>
+      }
     </React.Fragment >
   );
 }
