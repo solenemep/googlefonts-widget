@@ -2,7 +2,7 @@ const Settings = (props) => {
   const { choice, changeChoice, text, changeText, size, changeSize } = props
   return (
     <div className="col-lg-3 mb-4">
-      <form style={{ position: "sticky" }, { top: "0px" }}>
+      <form style={{ position: "sticky", top: "0px" }}>
         <label className="fw-bold mb-2" htmlFor="sort">Afficher des polices</label>
         <select value={choice} id="sort" className="form-select mb-4" onChange={changeChoice}>
           <option value="date">Les plus récentes</option>
