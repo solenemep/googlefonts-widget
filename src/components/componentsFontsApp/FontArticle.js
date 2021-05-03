@@ -5,7 +5,7 @@ const FontArticle = (props) => {
   const urlPolice = policeFamily.split(' ').join(' ', '+')
   const url = `https://fonts.google.com/specimen/${urlPolice}`
   return (
-    <div className={darkMode ? "bg-dark shadow-sm border p-3 h-100" : "bg-light shadow-sm border p-3 h-100"}>
+    <div className={darkMode ? "bg-dark shadow-sm border rounded p-3 h-100" : "bg-light shadow-sm border rounded p-3 h-100"}>
       <h2 className="h6 d-flex align-items-center justify-content-between">
         <span>{policeFamily}</span>
         {lang === 'EN' && <small>{policeVariants} variant(s)</small>}
