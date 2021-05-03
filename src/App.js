@@ -50,9 +50,14 @@ function App() {
       <div className="container min-vh-100">
         <FontsApp lang={lang} darkMode={darkMode} />
       </div>
-      <Footer>
-        With Love&nbsp;& React for Alyra
-      </Footer>
+      {lang === 'EN' &&
+        <Footer>
+          With Love&nbsp;& React for Alyra
+      </Footer>}
+      {lang === 'FR' &&
+        <Footer>
+          Avec Amour&nbsp;& React pour Alyra
+      </Footer>}
     </React.Fragment >
   );
 }

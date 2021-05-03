@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import FontArticle from "./FontArticle"
 
 const Display = (props) => {
-  const { choice, text, size } = props
+  const { lang, darkMode, choice, text, size } = props
   // const CHOICE = choice.toUpperCase()
 
   // Appel à l'API `https://webfonts.googleapis.com/v1/webfonts?sort=${CHOICE}&key=${process.env.REACT_APP_GOOGLEFONTS_API_KEY}`
@@ -73,11 +73,15 @@ const Display = (props) => {
     <div className="col-lg-9">
       <section className="row mb-5">
         <h2 className="mb-3">
-          {choice === 'date' && <span className="badge bg-danger">Les plus récentes</span>}
-          {choice === 'popularity' && <span className="badge bg-danger">Les plus populaires</span>}
-          {choice === 'trending' && <span className="badge bg-danger">Top 10 trending</span>}
+          {choice === 'date' && lang === 'EN' && <span className="badge bg-danger">Most recent</span>}
+          {choice === 'date' && lang === 'FR' && <span className="badge bg-danger">Les plus récentes</span>}
+          {choice === 'popularity' && lang === 'EN' && <span className="badge bg-danger">Most popular</span>}
+          {choice === 'popularity' && lang === 'FR' && <span className="badge bg-danger">Les plus populaires</span>}
+          {choice === 'trending' && lang === 'EN' && <span className="badge bg-danger">Top 10 trending</span>}
+          {choice === 'trending' && lang === 'FR' && <span className="badge bg-danger">Top 10 tendances</span>}
         </h2>
-        {loading && <p className="text-center">loading...</p>}
+        {loading && lang === 'EN' && <p className="text-center">loading...</p>}
+        {loading && lang === 'FR' && <p className="text-center">chargement...</p>}
         {!!error && <p className="px-2 text-center alert alert-danger">{error}</p>}
         {!loading &&
           <React.Fragment>
@@ -85,6 +89,8 @@ const Display = (props) => {
               return (
                 <article className="col-lg-6 mb-4" key={police.family}>
                   <FontArticle
+                    lang={lang}
+                    darkMode={darkMode}
                     policeFamily={police.family}
                     policeVariants={police.variants.length}
                     policeCategory={police.category}

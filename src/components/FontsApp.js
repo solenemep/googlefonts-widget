@@ -16,7 +16,7 @@ const FontsApp = (props) => {
   )
 
   // Text
-  const [text, setText] = useState(JSON.parse(localStorage.getItem('textGoogleFonts')) || 'Portez ce vieux whisky au juge blond qui fume !?')
+  const [text, setText] = useState(JSON.parse(localStorage.getItem('textGoogleFonts')) || lang === 'EN' ? "Sphinx of black quartz, judge my vow ?!" : 'Portez ce vieux whisky au juge blond qui fume !?')
   const changeText = (event) => {
     setText(event.target.value)
   }
@@ -37,8 +37,8 @@ const FontsApp = (props) => {
 
   return (
     <div className="row my-5">
-      <Settings choice={choice} changeChoice={changeChoice} text={text} changeText={changeText} size={size} changeSize={changeSize} />
-      <Display choice={choice} text={text} size={size} />
+      <Settings lang={lang} darkMode={darkMode} choice={choice} changeChoice={changeChoice} text={text} changeText={changeText} size={size} changeSize={changeSize} />
+      <Display lang={lang} darkMode={darkMode} choice={choice} text={text} size={size} />
     </div>
   )
 }

@@ -1,14 +1,15 @@
 import GoogleFontLoader from 'react-google-font-loader'
 
 const FontArticle = (props) => {
-  const { policeFamily, policeVariants, policeCategory, size, text } = props
+  const { lang, darkMode, policeFamily, policeVariants, policeCategory, size, text } = props
   const urlPolice = policeFamily.split(' ').join(' ', '+')
   const url = `https://fonts.google.com/specimen/${urlPolice}`
   return (
     <div className="shadow-sm border p-3 h-100">
       <h2 className="h6 d-flex align-items-center justify-content-between">
         <span>{policeFamily}</span>
-        <small>{policeVariants} variant(s)</small>
+        {lang === 'EN' && <small>{policeVariants} variant(s)</small>}
+        {lang === 'FR' && <small>{policeVariants} variante(s)</small>}
       </h2>
       <p>
         <span className="badge bg-dark">{policeCategory.toUpperCase()}</span>
@@ -20,7 +21,8 @@ const FontArticle = (props) => {
           }
         ]} />
       <p className="sample" style={{ fontFamily: `${policeFamily}, ${policeCategory}`, fontSize: `${size}px` }}>{text}</p>
-      <a rel="noopener noreferrer" target="_blank" className="text-danger" href={url}>Voir sur Google Fonts (ouvre un nouveau tab)</a>
+      {lang === 'EN' && <a rel="noopener noreferrer" target="_blank" className="text-danger" href={url}>See on Google Fonts (open new tab)</a>}
+      {lang === 'FR' && <a rel="noopener noreferrer" target="_blank" className="text-danger" href={url}>Voir sur Google Fonts (ouvre un nouveau tab)</a>}
     </div >
   )
 }
