@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import FontArticle from "./FontArticle"
 
 const Display = (props) => {
-  const { lang, darkMode, choice, text, size, number } = props
+  const { lang, darkMode, choice, text, size, number, color } = props
   // const CHOICE = choice.toUpperCase()
 
   // Appel à l'API `https://webfonts.googleapis.com/v1/webfonts?sort=${CHOICE}&key=${process.env.REACT_APP_GOOGLEFONTS_API_KEY}`
@@ -95,7 +95,8 @@ const Display = (props) => {
                     policeVariants={police.variants.length}
                     policeCategory={police.category}
                     text={text}
-                    size={size} />
+                    size={size}
+                    color={color} />
                 </article>)
             })
             }

@@ -45,10 +45,20 @@ const FontsApp = (props) => {
   }
   )
 
+  // Color
+  const [color, setColor] = useState(JSON.parse(localStorage.getItem('colorGoogleFonts')) || 'black')
+  const changeColor = (event) => {
+    setColor(event.target.value)
+  }
+  useEffect(() => {
+    localStorage.setItem("colorGoogleFonts", JSON.stringify(color), [color])
+  }
+  )
+
   return (
     <div className="row">
-      <Settings lang={lang} darkMode={darkMode} choice={choice} changeChoice={changeChoice} text={text} changeText={changeText} size={size} changeSize={changeSize} number={number} changeNumber={changeNumber} />
-      <Display lang={lang} darkMode={darkMode} choice={choice} text={text} size={size} number={number} />
+      <Settings lang={lang} darkMode={darkMode} choice={choice} changeChoice={changeChoice} text={text} changeText={changeText} size={size} changeSize={changeSize} number={number} changeNumber={changeNumber} color={color} changeColor={changeColor} />
+      <Display lang={lang} darkMode={darkMode} choice={choice} text={text} size={size} number={number} color={color} />
     </div>
   )
 }

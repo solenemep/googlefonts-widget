@@ -1,7 +1,7 @@
 import GoogleFontLoader from 'react-google-font-loader'
 
 const FontArticle = (props) => {
-  const { lang, darkMode, policeFamily, policeVariants, policeCategory, size, text } = props
+  const { lang, darkMode, policeFamily, policeVariants, policeCategory, size, text, color } = props
   const urlPolice = policeFamily.split(' ').join(' ', '+')
   const url = `https://fonts.google.com/specimen/${urlPolice}`
   return (
@@ -20,7 +20,9 @@ const FontArticle = (props) => {
             font: `${policeFamily}`,
           }
         ]} />
-      <p className="sample" style={{ fontFamily: `${policeFamily}, ${policeCategory}`, fontSize: `${size}px` }}>{text}</p>
+      <p className="sample" style={{
+        fontFamily: `${policeFamily}, ${policeCategory}`, fontSize: `${size}px`, color: `${color}`
+      }}>{text}</p>
       {lang === 'EN' && <a rel="noopener noreferrer" target="_blank" className="text-danger" href={url}>See on Google Fonts (open new tab)</a>}
       {lang === 'FR' && <a rel="noopener noreferrer" target="_blank" className="text-danger" href={url}>Voir sur Google Fonts (ouvre un nouveau tab)</a>}
     </div >
