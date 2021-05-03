@@ -2,8 +2,7 @@ import { useState, useEffect } from "react"
 import Display from "./componentsFontsApp/Display"
 import Settings from "./componentsFontsApp/Settings"
 
-const FontsApp = (props) => {
-  const { } = props
+const FontsApp = () => {
 
   // Choice
   const [choice, setChoice] = useState(JSON.parse(localStorage.getItem('choiceGoogleFonts')) || 'date')
@@ -26,7 +25,7 @@ const FontsApp = (props) => {
   )
 
   // Size
-  const [size, setSize] = useState(JSON.parse(localStorage.getItem('textGoogleFonts')) || '28')
+  const [size, setSize] = useState(JSON.parse(localStorage.getItem('sizeGoogleFonts')) || '28')
   const changeSize = (event) => {
     setSize(event.target.value)
   }

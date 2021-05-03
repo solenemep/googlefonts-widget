@@ -3,7 +3,7 @@ import FontArticle from "./FontArticle"
 
 const Display = (props) => {
   const { choice, text, size } = props
-  const CHOICE = choice.toUpperCase()
+  // const CHOICE = choice.toUpperCase()
 
   // Appel à l'API `https://webfonts.googleapis.com/v1/webfonts?sort=${CHOICE}&key=${process.env.REACT_APP_GOOGLEFONTS_API_KEY}`
   const [polices, setPolices] = useState([]);
@@ -33,7 +33,7 @@ const Display = (props) => {
     //signal: controller.signal
     }) */
     setLoading(true);
-    fetch(`https://webfonts.googleapis.com/v1/webfonts?sort=${CHOICE}&key=${process.env.REACT_APP_GOOGLEFONTS_API_KEY}`, {
+    fetch(`https://webfonts.googleapis.com/v1/webfonts?sort=${choice.toUpperCase()}&key=${process.env.REACT_APP_GOOGLEFONTS_API_KEY}`, {
       signal: controllerRef.current.signal
     })
       .then((response) => {
@@ -50,7 +50,6 @@ const Display = (props) => {
         if (!cancelRef.current) {
           console.log("will update component");
           setPolices(data.items)
-          console.log(polices)
           setLoading(false);
         }
       })
@@ -78,17 +77,23 @@ const Display = (props) => {
           {choice === 'popularity' && <span className="badge bg-danger">Les plus populaires</span>}
           {choice === 'trending' && <span className="badge bg-danger">Top 10 trending</span>}
         </h2>
-        {polices.slice(0, 10).map((police) => {
-          return (
-            <article className="col-lg-6 mb-4">
-              <FontArticle
-                policeFamily={police.family}
-                policeVariants={police.variants.length}
-                policeCategory={police.category}
-                text={text}
-                size={size} />
-            </article>)
-        })}
+        {loading && <p className="text-center">loading...</p>}
+        {!!error && <p className="text-center alert alert-danger">{error}</p>}
+        {!loading &&
+          <React.Fragment>
+            {polices.slice(0, 10).map((police) => {
+              return (
+                <article className="col-lg-6 mb-4" key={police.family}>
+                  <FontArticle
+                    policeFamily={police.family}
+                    policeVariants={police.variants.length}
+                    policeCategory={police.category}
+                    text={text}
+                    size={size} />
+                </article>)
+            })
+            }
+          </React.Fragment>}
       </section>
     </div>
   )
