@@ -78,7 +78,7 @@ const Display = (props) => {
           {choice === 'trending' && <span className="badge bg-danger">Top 10 trending</span>}
         </h2>
         {loading && <p className="text-center">loading...</p>}
-        {!!error && <p className="text-center alert alert-danger">{error}</p>}
+        {!!error && <p className="px-2 text-center alert alert-danger">{error}</p>}
         {!loading &&
           <React.Fragment>
             {polices.slice(0, 10).map((police) => {
