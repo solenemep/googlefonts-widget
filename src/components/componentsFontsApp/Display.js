@@ -22,7 +22,7 @@ const Display = (props) => {
         </h2>
         {loading && lang === 'EN' && <p className="text-center">loading...</p>}
         {loading && lang === 'FR' && <p className="text-center">chargement...</p>}
-        {!!error && <p className="px-2 text-center alert alert-danger">{error}</p>}
+        {!!error && <p className="m-3 text-center alert alert-danger">{error}</p>}
         {!loading &&
           <React.Fragment>
 
