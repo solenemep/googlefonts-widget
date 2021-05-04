@@ -126,10 +126,14 @@ const FontsApp = (props) => {
   }
   const categories = allCategory(polices.slice(0, number))
 
-  const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState(JSON.parse(localStorage.getItem('filterGoogleFonts')) || 'all')
   const changeFilter = (event) => {
     setFilter(event.target.value)
   }
+  useEffect(() => {
+    localStorage.setItem("filterGoogleFonts", JSON.stringify(filter), [filter])
+  }
+  )
   const filterPolices = (filter) => {
     if (filter === "all") {
       return polices
