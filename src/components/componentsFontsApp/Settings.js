@@ -32,20 +32,6 @@ const Settings = (props) => {
         </div>
         <div className="mb-3">
           {lang === 'EN' &&
-            <label htmlFor="text" className="form-label fw-bold mb-3">Type your text</label>}
-          {lang === 'FR' &&
-            <label htmlFor="text" className="form-label fw-bold mb-3">Tappez votre text</label>}
-          <textarea id="text" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} onChange={changeText} value={text}></textarea>
-        </div>
-        <div className="mb-3">
-          {lang === 'EN' &&
-            <label htmlFor="range" className="form-label fw-bold mb-3">Font size</label>}
-          {lang === 'FR' &&
-            <label htmlFor="range" className="form-label fw-bold mb-3">La taille de police</label>}
-          <input type="range" className="form-range" id="range" min="8" max="48" step="1" value={size} onChange={changeSize} />
-        </div>
-        <div className="mb-3">
-          {lang === 'EN' &&
             <label htmlFor="number" className="form-label fw-bold mb-3">Number of fonts</label>}
           {lang === 'FR' &&
             <label htmlFor="number" className="form-label fw-bold mb-3">Nombre de polices</label>}
@@ -62,6 +48,20 @@ const Settings = (props) => {
               )
             })}
           </select>
+        </div>
+        <div className="mb-3">
+          {lang === 'EN' &&
+            <label htmlFor="text" className="form-label fw-bold mb-3">Type your text</label>}
+          {lang === 'FR' &&
+            <label htmlFor="text" className="form-label fw-bold mb-3">Tappez votre text</label>}
+          <textarea id="text" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} onChange={changeText} value={text}></textarea>
+        </div>
+        <div className="mb-3">
+          {lang === 'EN' &&
+            <label htmlFor="range" className="form-label fw-bold mb-3">Font size</label>}
+          {lang === 'FR' &&
+            <label htmlFor="range" className="form-label fw-bold mb-3">La taille de police</label>}
+          <input type="range" className="form-range" id="range" min="8" max="48" step="1" value={size} onChange={changeSize} />
         </div>
         <div>
           {lang === 'EN' &&

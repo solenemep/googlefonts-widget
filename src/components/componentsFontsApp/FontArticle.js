@@ -21,9 +21,10 @@ const FontArticle = (props) => {
               font: `${policeFamily}`,
             }
           ]} />
-
         <p className={darkMode ? "sample bg-black p-3 rounded" : "sample rounded bg-white p-3"} style={{
-          fontFamily: `${policeFamily}, ${policeCategory}`, fontSize: `${size}px`, color: `${color}`
+          fontFamily: `${policeFamily}, ${policeCategory}`,
+          fontSize: `${size}px`,
+          color: `${color}`
         }}>{text}</p>
       </div>
       <div>
