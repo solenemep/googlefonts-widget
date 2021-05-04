@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .bg-black {
-  background-color: #181818;
+  background-color: #000000;
 }
 .bg-custom {
   background-image: linear-gradient(to right, rgb(204, 36, 36), rgb(255, 100, 53));
