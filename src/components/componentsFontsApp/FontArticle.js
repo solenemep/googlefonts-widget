@@ -20,7 +20,7 @@ const FontArticle = (props) => {
             font: `${policeFamily}`,
           }
         ]} />
-      <p className="sample" style={{
+      <p className={darkMode ? "sample bg-black p-3 rounded" : "sample rounded bg-white p-3"} style={{
         fontFamily: `${policeFamily}, ${policeCategory}`, fontSize: `${size}px`, color: `${color}`
       }}>{text}</p>
       {lang === 'EN' && <a rel="noopener noreferrer" target="_blank" className="text-danger" href={url}>See on Google Fonts (open new tab)</a>}
