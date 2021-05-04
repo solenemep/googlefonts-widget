@@ -46,7 +46,7 @@ const FontsApp = (props) => {
   )
 
   // Color
-  const [color, setColor] = useState(JSON.parse(localStorage.getItem('colorGoogleFonts')) || 'black')
+  const [color, setColor] = useState(JSON.parse(localStorage.getItem('colorGoogleFonts')) || '#000000')
   const changeColor = (event) => {
     setColor(event.target.value)
   }
@@ -124,7 +124,7 @@ const FontsApp = (props) => {
     })
     return listCategoryUnique
   }
-  const categories = allCategory(polices)
+  const categories = allCategory(polices.slice(0, number))
 
   const [filter, setFilter] = useState("all")
   const changeFilter = (event) => {
