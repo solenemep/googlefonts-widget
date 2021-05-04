@@ -65,7 +65,7 @@ const Settings = (props) => {
         </div>
         <div>
           {lang === 'EN' &&
-            <label htmlFor="color" className="form-label fw-bold mb-3">Font's color</label>}
+            <label htmlFor="color" className="form-label fw-bold mb-3">Font color</label>}
           {lang === 'FR' &&
             <label htmlFor="color" className="form-label fw-bold mb-3">Couleur de la police</label>}
           <input type="color" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} id="color" name="color" value={color} onChange={changeColor} />

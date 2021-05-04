@@ -1,7 +1,7 @@
 const Header = (props) => {
   const { darkMode, children } = props
   return (
-    <header className={darkMode ? "p-5 bg-danger text-dark text-center" : "p-5 bg-danger text-white text-center"}>
+    <header className={darkMode ? "p-5 bg-custom text-dark text-center" : "p-5 bg-custom text-white text-center"}>
       {children}
     </header>
   )
