@@ -26,8 +26,6 @@ const Display = (props) => {
         {!loading &&
           <React.Fragment>
 
-
-
             {polices.slice(0, number).map((police) => {
               return (
                 <article className="col-lg-6 mb-4" key={police.family}>
