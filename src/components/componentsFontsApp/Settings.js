@@ -53,7 +53,7 @@ const Settings = (props) => {
         </div>
         <div className="mb-3">
           {lang === 'EN' && <label className="form-label fw-bold mb-3" htmlFor="category">Filter by category</label>}
-          {lang === 'FR' && <label className="form-label fw-bold mb-3" htmlFor="category">Filtre par catégorie</label>}
+          {lang === 'FR' && <label className="form-label fw-bold mb-3" htmlFor="category">Filtrer par catégorie</label>}
           <select id="category" value={filter} name="category" key="category" className={darkMode ? "form-select bg-dark text-white" : "form-select bg-light text-dark"} aria-label="filter by tags" onChange={changeFilter}>
             <option value="all" key="all">all</option>
             {categories.map((category) => {
