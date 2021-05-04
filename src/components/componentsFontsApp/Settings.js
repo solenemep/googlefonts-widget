@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Settings = (props) => {
-  const { lang, darkMode, choice, changeChoice, text, changeText, size, changeSize, number, changeNumber, color, changeColor } = props
+  const { lang, darkMode, choice, changeChoice, text, changeText, size, changeSize, number, changeNumber, categories, filter, changeFilter, color, changeColor } = props
   return (
     <div className="col-lg-3 mb-4">
 
@@ -50,6 +50,18 @@ const Settings = (props) => {
           {lang === 'FR' &&
             <label htmlFor="number" className="form-label fw-bold mb-3">Nombre de polices</label>}
           <input type="number" className={darkMode ? "bg-dark text-white form-control" : "bg-light text-dark form-control"} id="number" name="number" min="10" value={number} onChange={changeNumber} />
+        </div>
+        <div className="mb-3">
+          {lang === 'EN' && <label className="form-label fw-bold mb-3" htmlFor="category">Filter by category</label>}
+          {lang === 'FR' && <label className="form-label fw-bold mb-3" htmlFor="category">Filtre par catégorie</label>}
+          <select id="category" value={filter} name="category" key="category" className={darkMode ? "form-select bg-dark text-white" : "form-select bg-light text-dark"} aria-label="filter by tags" onChange={changeFilter}>
+            <option value="all" key="all">all</option>
+            {categories.map((category) => {
+              return (
+                <option value={category} key={category}>{category}</option>
+              )
+            })}
+          </select>
         </div>
         <div>
           {lang === 'EN' &&
