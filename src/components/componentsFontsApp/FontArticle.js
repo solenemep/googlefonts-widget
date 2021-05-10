@@ -28,8 +28,8 @@ const FontArticle = (props) => {
         }}>{text}</p>
       </div>
       <div>
-        {lang === 'EN' && <a rel="noopener noreferrer" target="_blank" className="card-link text-danger stretched-link" href={url}>See on Google Fonts (open new tab)</a>}
-        {lang === 'FR' && <a rel="noopener noreferrer" target="_blank" className="card-link text-danger stretched-link" href={url}>Voir sur Google Fonts (ouvre un nouveau tab)</a>}
+        {lang === 'EN' && <a rel="noopener noreferrer" target="_blank" className="card-link text-danger stretched-link" href={url}>See on Google Fonts</a>}
+        {lang === 'FR' && <a rel="noopener noreferrer" target="_blank" className="card-link text-danger stretched-link" href={url}>Voir sur Google Fonts</a>}
       </div >
     </div>
   )
